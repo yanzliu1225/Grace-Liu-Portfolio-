@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techtronics Case Study</title>
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar" id="sidebar-container"></aside>
+
+        <script>
+            fetch('sidebar.html')
+                .then(response => {
+                    if (!response.ok) throw new Error("Sidebar file not found");
+                    return response.text();
+                })
+                .then(data => {
+                    const container = document.getElementById('sidebar-container');
+                    container.innerHTML = data;
+                    
+                    // Logic to highlight the active link
+                    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+                    const links = {
+                        "index.html": "nav-dashboard",
+                        "techtronics.html": "nav-techtronics",
+                        "shellfund.html": "nav-shellfund"
+                    };
+                    
+                    if (links[currentPage]) {
+                        const activeLink = document.getElementById(links[currentPage]);
+                        if(activeLink) activeLink.classList.add('active');
+                    }
+                })
+                .catch(err => console.error(err));
+        </script>
+
+        <main class="content">
+            <section class="project-hero">
+                <div class="hero-left">
+                    <span class="badge teal">UX CASE STUDY</span>
+                    <h1 class="project-title">Techtronics: <br><span class="accent-text">E-commerce & AI</span></h1>
+                    <p class="project-desc">By automating routine research and surfacing important information, we aim to help users shop confidently and efficiently.</p>
+                    
+                    <div class="meta-info">
+                        <div class="meta-item"><span>MY ROLE</span><strong>Lead Product Designer</strong></div>
+                        <div class="meta-item"><span>DURATION</span><strong>2 Months (2025)</strong></div>
+                    </div>
+                    <div class="stats-row">
+                    <div class="stat-box">
+                        <h3>User Centric</h3>
+                        <p>Personalized AI shopping assistants</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Efficiency</h3>
+                        <p>Streamlined 3-step checkout flow</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Inclusive</h3>
+                        <p>WCAG 2.1 compliant interface</p>
+                    </div>
+                </div>
+
+                </div>
+                <div class="hero-right">
+                    <div class="mockup-container">
+                        <img src="images/gizmo.png" alt="App Mockup">
+                    </div>
+                </div>
+            </section> 
+
+            <section class="visual-framework-section">
+                <div class="visual-grid">
+                    <div class="grid-item">
+                        <img src="images/gizmo_mobile.png" alt="Mobile Landing Page">
+                        <p class="caption">Mobile Landing Page</p>
+                    </div>
+                    <div class="grid-item">
+                        <img src="images/Techtronics.png" alt="Website Landing Page">
+                        <p class="caption">Website Landing Page</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="details-section">
+                <h2>1. The Problem</h2>
+                <div class="two-col">
+                    <div class="text-block">
+                        <p>Online shoppers need a reliable, efficient, and personalized way to find products that genuinely fit their needs without the cognitive overwhelm that hinders confident purchases.</p>
+                        <ul>
+                            <li>Information overload when evaluating items.</li>
+                            <li>Decision fatigue when faced with too many options</li>
+                            <li>Postponing purchases or abandoning an e-commerce platform altogether</li>
+                        </ul>
+                    </div>
+                    <div class="objectives-card">
+                        <h4>Key Objectives</h4>
+                        <div class="obj-item"><strong>Simplify Onboarding</strong><p>Reduce CAC from 3 mins to 1 min.</p></div>
+                        <div class="obj-item"><strong>Modernize Visuals</strong><p>Bring the brand into the AI era.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="details-section">
+                <h2>2. User Research</h2>
+                <div class="project-grid">
+                    <div class="card research-card">
+                        <span class="badge blue">INSIGHT 01</span>
+                        <p>Users feel overwhelmed by financial jargon and complex navigation.</p>
+                    </div>
+                    <div class="card research-card">
+                        <span class="badge blue">INSIGHT 02</span>
+                        <p>Automated portfolio balancing is the most requested feature by Gen-Z.</p>
+                    </div>
+                    <div class="card research-card">
+                        <span class="badge blue">INSIGHT 03</span>
+                        <p>80% of users prefer mobile-first access for quick daily checks.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="details-section">
+                <h2>4. Usability Tests</h2>
+                <div class="two-col">
+                    <div class="card dark-card">
+                        <p><strong>The Goal:</strong> Test if new users can set up a portfolio in under 2 minutes.</p>
+                        <p><strong>The Result:</strong> 92% success rate, average time 1:15m.</p>
+                    </div>
+                    <div class="sessions-summary">
+                        <div class="session-stat"><span>User 01:</span> "The UI feels like a game, I love it."</div>
+                        <div class="session-stat"><span>User 02:</span> "I finally understand my risk level."</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="details-section hifi-showcase">
+                <h2>6. Hi-fi Wireframes & Final Prototype</h2>
+                <div class="hifi-container">
+                    <div class="hifi-text">
+                        <span class="badge teal">FINAL PRODUCT</span>
+                        <h3>Intelligent Dashboard</h3>
+                        <p>The final interface uses a high-density, low-latency UI system designed for clarity.</p>
+                        <ul class="check-list">
+                            <li>Real-time data syncing</li>
+                            <li>Customizable widgets</li>
+                            <li>AI-powered risk analysis</li>
+                        </ul>
+                    </div>
+                    <div class="hifi-visual">
+                        <img src="images/final-mockup.png" alt="Final Prototype Showcases">
+                    </div>
+                </div>
+            </section>
+
+            <section class="next-project-section">
+                <div class="card next-project-card">
+                    <div class="next-content">
+                        <span class="badge blue">NEXT PROJECT</span>
+                        <h2>Health Platform Redesign</h2>
+                        <p>Helping a health startup increase patient engagement by 40%.</p>
+                        <a href="shellfund.html" class="btn-primary" style="width: auto; padding: 12px 30px;">View Project →</a>
+                    </div>
+                    <div class="next-arrow">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+            </main>
+        </div>
+    </body>
+</html>
